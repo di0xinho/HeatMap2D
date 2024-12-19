@@ -3,7 +3,7 @@
 #include <fstream>
 
 int main() {
-    // Wstêpny szkielet symulacji - parametry symulacji
+    // Wstêpny szkielet symulacji - domyœlne parametry symulacji
     int NX = 100;    // Liczba punktów w kierunku x
     int NY = 100;    // Liczba punktów w kierunku y
     int STEPS = 1000; // Liczba kroków czasowych
@@ -11,6 +11,10 @@ int main() {
     double DT = 0.01;  // Krok czasowy
     double DX = 1.0;   // Odleg³oœæ miêdzy wêz³ami w kierunku x
     double DY = 1.0;   // Odleg³oœæ miêdzy wêz³ami w kierunku y
+    int num_threads = 4;          // Liczba w¹tków
+    std::string input_file;       // Plik wejœciowy
+    std::string output_dir;       // Katalog wyjœciowy
+
 
     // Tworzenie siatki temperatury
     std::vector<std::vector<double>> temperature(NX, std::vector<double>(NY, 20.0)); // Wype³niamy wartoœciami pocz¹tkowymi
